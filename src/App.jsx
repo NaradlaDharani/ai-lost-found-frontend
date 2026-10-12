@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import { ENDPOINTS, API_BASE_URL } from "./api";
+import { ENDPOINTS } from "./api";
 
 function App() {
   const [page, setPage] = useState("home");
