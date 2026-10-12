@@ -5,9 +5,11 @@ function Login({ onLogin }) {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || (import.meta.env.PROD ? "https://ai-lost-found-backend-1.onrender.com" : "http://localhost:4040");
+
   const login = async () => {
     try {
-      const response = await fetch("http://localhost:4040/auth/login", {
+      const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
